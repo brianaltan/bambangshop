@@ -89,5 +89,16 @@ A Vec has an O(n) performance complexity when finding a unique id within the dat
 I think DashMap provides thread safety and is optimized for multithreaded environments, effectively protecting against data race conditions. Given this, DashMap offers much better performance and safety compared to a self-implemented solution. While the Singleton pattern can be used as an alternative for learning purposes in our case, in terms of performance and stability, DashMap is still superior.
 
 #### Reflection Publisher-2
+1. > In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+The reasons why Service and Repository are separated are rooted in the implementation of design principles such as Separation of Concerns and the Single Responsibility Principle. This separation enhances scalability, improves readability for other developers, and provides clearer boundaries between different types of logic. By doing so, the codebase becomes easier to understand facilitating better collaboration among developers.
+
+2. > What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+If we only use Models without separating the concerns into Service and Repository layers, it will definitely increase code complexity and raise concerns such as difficulty in reusability. The worst issue is that it becomes extremely difficult for a developer or other developers to test and debug. This happens because the Models know too much about other parts of the codebase, making the application fragile and difficult to maintain for other developers.
+
+3. > Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+Yes, Postman has been incredibly helpful for testing and debugging APIs, which are essential for validating my current work. It’s especially useful in group projects, where collaboration is key. With Postman, I can not only test my own APIs but also work with APIs developed by other team members by using features like collections and environment variables. These features greatly enhance productivity and streamline teamwork among the group.
 
 #### Reflection Publisher-3
