@@ -75,8 +75,18 @@ You can install Postman via this website: https://www.postman.com/downloads/
 This is the place for you to write reflections:
 
 ### Mandatory (Publisher) Reflections
-
 #### Reflection Publisher-1
+1. > In the Observer pattern diagram explained by the Head First Design Pattern book, Subscriber is defined as an interface. Explain based on your understanding of Observer design patterns, do we still need an interface (or trait in Rust) in this BambangShop case, or a single Model struct is enough?
+
+In my opinion, using a trait could allow the subject to operate independently of its observers. Typically, traits are used when we want to add more types of notifications or make changes, as they can be easily implemented. In the case of BambangShop, it is true that there is only a single subscriber, so using a simple struct may seem sufficient. However, I would still advocate for using a trait because it opens up a more dynamic approach in the future, in case I want to add additional subscriber types or behaviors without needing to rewrite the existing code.
+ 
+2. > id in Program and url in Subscriber is intended to be unique. Explain based on your understanding, is using Vec (list) sufficient or using DashMap (map/dictionary) like we currently use is necessary for this case?
+
+A Vec has an O(n) performance complexity when finding a unique id within the dataset. However, a DashMap, due to its dictionary-like key-value setup, allows us to detect unique keys with O(1) complexity. In our case, DashMap is more appropriate because it provides thread-safe operations and enables much more efficient lookups.
+
+3. > When programming using Rust, we are enforced by rigorous compiler constraints to make a thread-safe program. In the case of the List of Subscribers (SUBSCRIBERS) static variable, we used the DashMap external library for thread safe HashMap. Explain based on your understanding of design patterns, do we still need DashMap or we can implement Singleton pattern instead?
+
+I think DashMap provides thread safety and is optimized for multithreaded environments, effectively protecting against data race conditions. Given this, DashMap offers much better performance and safety compared to a self-implemented solution. While the Singleton pattern can be used as an alternative for learning purposes in our case, in terms of performance and stability, DashMap is still superior.
 
 #### Reflection Publisher-2
 
