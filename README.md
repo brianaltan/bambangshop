@@ -102,3 +102,14 @@ If we only use Models without separating the concerns into Service and Repositor
 Yes, Postman has been incredibly helpful for testing and debugging APIs, which are essential for validating my current work. It’s especially useful in group projects, where collaboration is key. With Postman, I can not only test my own APIs but also work with APIs developed by other team members by using features like collections and environment variables. These features greatly enhance productivity and streamline teamwork among the group.
 
 #### Reflection Publisher-3
+1. > Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+We used the Push model of the Observer Pattern. All relevant data is sent through a notification object using the update method. This ensures that subscribers receive the necessary information without needing to make additional requests.
+
+2. > What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+If we used the Pull model instead of the Push model, one advantage is that subscribers would have more control and flexibility in configuring the specific type of data they want to retrieve. However, a disadvantage is that this approach would require subscribers to actively make requests to the publisher each time they need data, which could lead to increased overhead compared to Push model.
+
+3. > Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+Chaos is what’s going to happen! Without multi-threading, notifications will be processed one at a time, meaning the program will have to wait until one notification is completely handled before moving on to the next. This could lead to slow performance delays and potential bottlenecks, especially if there are many notifications to process simultaneously.
